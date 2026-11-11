@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ary" dir="rtl" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Imrane Fathi - Pro Coder & MMA Fighter</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.8);
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 850px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+        }
+        .lang-switch {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .lang-switch button {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            margin: 0 4px;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .lang-switch button:hover, .lang-switch button.active {
+            background-color: var(--accent);
+            color: var(--bg-color);
+        }
+        h1 { color: var(--accent); text-align: center; margin-bottom: 5px; }
+        p.subtitle { text-align: center; color: var(--text-muted); margin-top: 0; margin-bottom: 30px; }
+        .section {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent);
+        }
+        .cv-section {
+            border-left-color: #4ade80;
+            background: rgba(74, 222, 128, 0.05);
+        }
+        .cv-section h2 { color: #4ade80; margin-top: 0; }
+        .quiz-box {
+            background: rgba(56, 189, 248, 0.05);
+            border: 2px dashed var(--accent);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        .question-card {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .quiz-box label {
+            display: block;
+            margin: 6px 0;
+            cursor: pointer;
+        }
+        button.btn {
+            background-color: var(--accent);
+            color: var(--bg-color);
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+        button.btn:hover { background-color: var(--accent-hover); }
+        .score-result {
+            margin-top: 15px;
+            padding: 12px;
+            background: rgba(56, 189, 248, 0.2);
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1rem;
+            display: none;
+        }
+        footer { text-align: center; color: var(--text-muted); margin-top: 20px; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Language Switcher -->
+        <div class="lang-switch">
+            <button onclick="setLang('ar')" id="btn-ar">العربية</button>
+            <button onclick="setLang('ary')" id="btn-ary" class="active">الدارجة</button>
+            <button onclick="setLang('fr')" id="btn-fr">Français</button>
+            <button onclick="setLang('en')" id="btn-en">English</button>
+        </div>
+
+        <h1 id="main-title">Imrane Fathi - Pro Coder & MMA Fighter</h1>
+        <p class="subtitle" id="main-subtitle">ديفلوبر، باحث في السيرفرات، ومقاتل MMA</p>
+
+        <!-- CV Section -->
+        <div class="section cv-section">
+            <h2 id="cv-title">📄 السيرة الذاتية (CV)</h2>
+            <p><strong id="cv-name">السمية الكاملة: عمران فتحي</strong></p>
+            <p id="cv-dob">📅 تاريخ الازدياد: 10/5/2013</p>
+            <p id="cv-goal">🥊 المطالب: كانقلب على شي competition دالـ MMA وأنا واجد ديما!</p>
+            <p id="cv-contact">📞 🌐 النيمرو: 0600333573 | انستغرام: supernova_3x</p>
+        </div>
+
+        <!-- About Section -->
+        <div class="section">
+            <h2 id="about-title">شكون أنا؟</h2>
+            <p id="about-text">أنا عمران، عندي 13 عام. جامع بين القوة والتركيز فـ MMA وبين التخربيق فـ Python وكودات.</p>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="section">
+            <h2 id="skills-title">المهارات ديالي</h2>
+            <ul>
+                <li>Python, Flask & Web Development</li>
+                <li>Network Security & Kali Linux (Basics)</li>
+                <li>Git & GitHub Deployment</li>
+            </ul>
+        </div>
+
+        <!-- MMA Section -->
+        <div class="section">
+            <h2 id="mma-title">الكونديسيون والـ MMA</h2>
+            <p id="mma-text">التدريب الصح، الصبر، والقتال حتى آخر لحظة.</p>
+        </div>
+
+        <!-- Quiz Mini-Game -->
+        <div class="quiz-box">
+            <h3 id="quiz-title">🎮 ميني جيم: تيصي راسك واش فنان ولا والو!</h3>
+            <form id="quiz-form" onsubmit="calculateScore(event)">
+                <div class="question-card">
+                    <p id="q1-text"><strong>1. شنوه هي لغة البرمجة باش مصاوب هاد الويبسايت؟</strong></p>
+                    <label><input type="radio" name="q1" value="python" required> Python</label>
+                    <label><input type="radio" name="q1" value="html"> HTML only</label>
+                </div>
+
+                <div class="question-card">
+                    <p id="q2-text"><strong>2. شحال فالعمر ديال عمران؟</strong></p>
+                    <label><input type="radio" name="q2" value="13" required> 13 years old</label>
+                    <label><input type="radio" name="q2" value="20"> 20 years old</label>
+                </div>
+
+                <div class="question-card">
+                    <p id="q3-text"><strong>3. شنو هو الرياضة اللي كيمارسها عمران بجانب البرمجة؟</strong></p>
+                    <label><input type="radio" name="q3" value="mma" required> MMA (Mixed Martial Arts)</label>
+                    <label><input type="radio" name="q3" value="tennis"> Tennis</label>
+                </div>
+
+                <button type="submit" class="btn" id="submit-btn">شوف النتيجة</button>
+            </form>
+
+            <div id="score-result" class="score-result"></div>
+        </div>
+
+        <footer>
+            <p id="footer-text">جميع الحقوق محفوظة © 2026 عمران فتحي</p>
+        </footer>
+    </div>
+
+    <script>
+        const texts = {
+            ar: {
+                title: 'عمران فتحي - مبرمج ومقاتل MMA',
+                subtitle: 'مطور برمجيات، باحث أمني، ومقاتل محترف',
+                cv_title: 'السيرة الذاتية (CV)',
+                cv_name: 'الاسم الكامل: عمران فتحي',
+                cv_dob: 'تاريخ الازدياد: 10/5/2013',
+                cv_goal: 'المطالب والهدف الحالي: أبحت عن منافسة في الفنون القتالية المختلطة (MMA) وأنا مستعد تماماً!',
+                cv_contact: 'التواصل: 0600333573 | انستغرام: supernova_3x',
+                about_title: 'من أنا؟',
+                about_text: 'أنا عمران، عمري 13 سنة. أجمع بين قوة الانضباط في الـ MMA ودقة البرمجة والأمن السيبراني.',
+                skills_title: 'المهارات التقنية',
+                mma_title: 'مسار الفنون القتالية (MMA)',
+                mma_text: 'التدريب المستمر، الانضباط الذهني، والقتال بروح التحدي.',
+                quiz_title: '🎮 ميني جيم: تحدى معلوماتك مع عمران!',
+                submit: 'إرسال الأجوبة',
+                score_text: 'نتيجة الكويز الخاصة بك:',
+                footer: 'جميع الحقوق محفوظة © 2026 عمران فتحي',
+                q1: '1. ما هي لغة البرمجة المستخدمة أساساً في تطوير هذا الموقع؟',
+                q2: '2. كم عمر عمران؟',
+                q3: '3. ما هي الرياضة التي يمارسها عمران بجانب البرمجة؟'
+            },
+            ary: {
+                title: 'Imrane Fathi - Pro Coder & MMA Fighter',
+                subtitle: 'ديفلوبر، باحث في السيرفرات، ومقاتل MMA',
+                cv_title: 'السيرة الذاتية (CV)',
+                cv_name: 'السمية الكاملة: عمران فتحي',
+                cv_dob:
